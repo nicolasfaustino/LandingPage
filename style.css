@@ -5,15 +5,6 @@
     --secondary-background-color: rgba(107, 114, 128, 0.05);
     --background-gradient: linear-gradient(180deg, rgba(23, 37, 84, .4), #161620);
     --border-color: rgba(107, 114, 128, 0.2);
-
-    --tw-gradient-from: #3f83f8 var(--tw-gradient-from-position);
-    --tw-gradient-to: rgba(63, 131, 248, 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    --tw-gradient-to: #06b6d4 var(--tw-gradient-to-position);
-    --tw-gradient-from: #1a56db var(--tw-gradient-from-position);
-    --tw-gradient-to: rgba(26, 86, 219, 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    --tw-gradient-to: #0e7490 var(--tw-gradient-to-position);
 }
 
 body {
