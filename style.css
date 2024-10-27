@@ -142,3 +142,52 @@ a svg {
     height: 150px;
     border-radius: 8px;
 }
+.footer {
+    background-color: #161620; /* Cor de fundo do footer */
+    padding: 20px 0; /* Espaçamento superior e inferior */
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer-links {
+    list-style: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 20px 0 0; /* Margem superior */
+    display: flex; /* Exibe os itens em linha */
+    justify-content: center; /* Centraliza os itens */
+}
+
+.footer-links li {
+    margin: 0 15px; /* Espaçamento entre os itens da lista */
+}
+
+.footer-links a {
+    color: rgb(180, 180, 180); /* Cor dos links (botões) em branco */
+    font-size: 14px; /* Tamanho da fonte */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.social-media {
+    margin: 10px 0; /* Margem superior e inferior para as redes sociais */
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.social-media a {
+    margin: 0 10px; /* Espaçamento entre os ícones de redes sociais */
+    text-decoration: none; /* Remove o sublinhado */
+    font-size: 20px; /* Tamanho da fonte para os ícones */
+    color: rgb(255, 255, 255); /* Cor dos links em branco */
+    padding: 10px; /* Espaçamento interno dos botões */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s, color 0.3s; /* Efeito de transição suave */
+}
+
+.social-media a:hover {
+    background-color: rgb(63, 131, 248); /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+.copyright {
+    color: rgb(180, 180, 180); /* Cor do texto dos direitos autorais */
+    font-size: 12px; /* Tamanho da fonte para direitos autorais */
+    margin-top: 10px; /* Margem superior */
+}
