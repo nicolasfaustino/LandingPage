@@ -139,3 +139,71 @@ a svg {
     height: 150px;
     border-radius: 8px;
 }
+
+
+/* Estilo do MODAL de Login */
+
+dialog#login {
+    width: 90%;
+    max-width: 390px;
+    max-height: 90vh;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #161620;
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    overflow-y: auto;
+}
+
+dialog#login h2 {
+    color: rgb(180, 180, 180);
+    margin-bottom: 20px;
+}
+
+dialog#login label {
+    display: block;
+    margin: 10px 0 5px;
+    color: rgb(180, 180, 180);
+}
+
+dialog#login input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #3f83f8;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+dialog#login button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+dialog#login button#btnFechar {
+    background-color: rgba(255, 0, 0, 0.7);
+    color: white;
+}
+
+dialog#login button[type="submit"] {
+    background-color: #3f83f8;
+    color: white;
+}
