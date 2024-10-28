@@ -20,6 +20,7 @@ html {
     background: var(--background-gradient);
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
+   
 }
 
 nav {
@@ -191,3 +192,50 @@ a svg {
     font-size: 12px; /* Tamanho da fonte para direitos autorais */
     margin-top: 10px; /* Margem superior */
 }
+
+#sobre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 30px; 
+    scroll-margin-top: 30px; 
+    margin-top: -50px; 
+}
+
+#sobre h1 {
+    font-size: 3rem; 
+    margin-bottom: 30px; 
+    margin-top: 0; 
+}
+
+.sobre-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px; 
+}
+
+.sobre-texto {
+    margin-bottom: 40px; 
+    line-height: 1.6; 
+}
+
+.sobre-imagem-1,
+.sobre-imagem-2 {
+    display: flex;
+    justify-content: center; 
+    gap: 25px; 
+    margin-top: 20px; 
+}
+
+
+.sobre-imagem-1 img,
+.sobre-imagem-2 img {
+    width: 400px; 
+    height: auto;
+    border-radius: 8px;
+}
+
+
+
