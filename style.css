@@ -147,24 +147,7 @@ a svg {
     background-color: #161620; /* Cor de fundo do footer */
     padding: 20px 0; /* Espaçamento superior e inferior */
     text-align: center; /* Centraliza o texto */
-}
-
-.footer-links {
-    list-style: none; /* Remove marcadores da lista */
-    padding: 0; /* Remove o padding padrão */
-    margin: 20px 0 0; /* Margem superior */
-    display: flex; /* Exibe os itens em linha */
-    justify-content: center; /* Centraliza os itens */
-}
-
-.footer-links li {
-    margin: 0 15px; /* Espaçamento entre os itens da lista */
-}
-
-.footer-links a {
-    color: rgb(180, 180, 180); /* Cor dos links (botões) em branco */
-    font-size: 14px; /* Tamanho da fonte */
-    text-decoration: none; /* Remove sublinhado */
+    border-top: 2px solid #ffffff;
 }
 
 .social-media {
