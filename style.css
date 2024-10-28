@@ -24,7 +24,7 @@ html {
 }
 
 nav {
-    width: 93vw;
+    max-width: 100vw;
     padding-left: 3vw;
     padding-right: 3vw;
     padding-top: 1rem;
