@@ -79,10 +79,20 @@ span {
 }
 
 .login {
-    background-color: rgba(63, 131, 248, .2);
+    background: rgba(71, 154, 250, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 85, 135, 0.37);
+    color: var(--primary-text-color);
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba(177, 213, 255, 0.18);
     padding: 10px;
-    border-radius: 5px;
     align-items: center;
+}
+
+.login:hover {
+    background: rgba(71, 154, 250, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 85, 135, 0.57);
 }
 
 main {
@@ -272,6 +282,11 @@ dialog input {
     border-radius: 5px;
 }
 
+dialog input:focus {
+    outline: none;
+    border: 1px solid #4CAF50;
+}
+
 dialog#login button {
     flex: 1;
     padding: 10px;
@@ -287,9 +302,38 @@ dialog#login button#btnFechar {
     color: white;
 }
 
+dialog#login button#btnFechar {
+    background: rgba(250, 71, 71, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+    color: var(--primary-text-color);
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 177, 177, 0.18);
+    padding: 10px;
+    align-items: center;
+}
+
+dialog#login button#btnFechar:hover {
+    background: rgba(250, 71, 71, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.77);
+}
+
 dialog#login button[type="submit"] {
-    background-color: #3f83f8;
-    color: white;
+    background: rgba(71, 154, 250, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 85, 135, 0.37);
+    color: var(--primary-text-color);
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba(177, 213, 255, 0.18);
+    padding: 10px;
+    align-items: center;
+}
+
+dialog#login button[type="submit"]:hover {
+    background: rgba(71, 154, 250, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 85, 135, 0.57);
 }
 
 .erro {

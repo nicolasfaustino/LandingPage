@@ -84,7 +84,7 @@ main {
     background: var(--background-gradient);
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 main.expandir { margin-left: 60px; }

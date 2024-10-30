@@ -15,7 +15,7 @@ loginDiv.addEventListener("click", (event) => {
 });
 
 btnFechar.addEventListener("click", () => {
-    document.body.removeChild(loginDialog);
+    loginDialog.style.display = "none";
 });
 
 formLogin.addEventListener('submit', evento =>{
