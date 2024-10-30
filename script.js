@@ -1,54 +1,49 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    let currentIndex = 0;
+const loginDiv = document.getElementById("loginDiv");
+const loginDialog = document.getElementById("login");
+const btnFechar = document.getElementById("btnFechar");
+const login = document.getElementById('login');
+const formLogin = document.querySelector('#login form');
+let dadosUsuarios = [
+    { nome: "user", email: "email@email.com", senha: "123" },
+    { nome: "aluno", email: "aluno@email.com", senha: "aluno" },
+    { nome: "root", email: "root@email.com", senha: "root" },
+];
 
-    function showNextItem() {
-        console.log('showNextItem');
-        carouselItems[currentIndex].classList.remove('active');
-        console.log(currentIndex);
-        currentIndex = (currentIndex + 1) % carouselItems.length;
-        console.log(currentIndex);
-        carouselItems[currentIndex].classList.add('active');
-        console.log(currentIndex);
-    }
-
-    function showPreviousItem() {
-        carouselItems[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-        carouselItems[currentIndex].classList.add('active');
-    }
-
-    document.querySelector('.next').addEventListener('click', showNextItem);
-    document.querySelector('.prev').addEventListener('click', showPreviousItem);
-
-    setInterval(showNextItem, 3000);
+loginDiv.addEventListener("click", (event) => {
+    event.preventDefault();
+    loginDialog.style.display = "flex";
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const loginDiv = document.getElementById("loginDiv");
+btnFechar.addEventListener("click", () => {
+    document.body.removeChild(loginDialog);
+});
 
-    async function loadLoginModal() {
-        try {
-            const response = await fetch("login/index.html");
-            const modalHTML = await response.text();
+formLogin.addEventListener('submit', evento =>{
+    evento.preventDefault();
 
-            document.body.insertAdjacentHTML("beforeend", modalHTML);
+    let msgErro = document.querySelector('.erro');
+    if(msgErro) login.removeChild(msgErro);
 
-            const loginDialog = document.getElementById("login");
-            const btnFechar = document.getElementById("btnFechar");
+    let email = document.getElementById('email').value;
+    let senha = document.getElementById('senha').value;
 
-            loginDialog.showModal();
+    dadosUsuarios.forEach(usuario =>{
+        console.log(email, senha);
+        if (email == usuario.email && senha == usuario.senha) {
+            sessionStorage.setItem('usuarioLogado', true);
+            sessionStorage.setItem('nomeUsuario', usuario.nome);
 
-            btnFechar.addEventListener("click", () => {
-                loginDialog.close();
-            });
-        } catch (error) {
-            console.error("Erro ao carregar o modal de login:", error);
+            window.location.href = "./adminpage/index.html";
         }
-    }
-
-    loginDiv.addEventListener("click", (event) => {
-        event.preventDefault();
-        loadLoginModal();
     });
+
+    let usuarioLogado = sessionStorage.getItem('usuarioLogado');
+
+    if(!usuarioLogado){
+        let erro = document.createElement('p');
+        erro.classList.add("erro");
+        erro.innerText = "Login ou senha inválidos!";
+        login.insertBefore(erro, login.firstChild);
+        document.querySelector("#login form").reset();
+    }
 });

@@ -7,6 +7,20 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <dialog id="login" style="display: none">
+            <h2>Login</h2>
+            <form>
+                <label for="email"> E-mail:</label>
+                <input type="text" name="email" id="email">
+                <label for="senha"> Senha: </label>
+                <input type="password" name="senha" id="senha">
+                <div class="button-container">
+                    <button type="button" id="btnFechar">Sair</button>
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </dialog>
+
         <div class="container">
             <nav>
                 <a href="#Home" class="logo"><h1>Imobiliaria<span>WEB</span></h1></a>
