@@ -59,14 +59,17 @@ nav button:hover {
 
 nav a {
     padding: 10px;
-    margin-bottom: 70vh;
     color: #fff;
     text-decoration: none;
 }
 
+nav a:nth-child(4) {
+    margin-bottom: 50vh;
+}
+
 @media screen and (min-width: 1920px) {
-    nav a {
-        margin-bottom: 82vh;
+    nav a:nth-child(4) {
+        margin-bottom: 70vh;
     }
 }
 
