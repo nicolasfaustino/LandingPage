@@ -67,8 +67,38 @@ if(chave){
 // ------------------------------------------------------------------------------------------------------------
 // -- Código de submissão do formulário
 // ------------------------------------------------------------------------------------------------------------
+function notifyError(msg, element) {
+    let msgErro = document.querySelector('.erro');
+    if(msgErro) login.removeChild(msgErro);
+    const errorCamp = document.getElementById(element);
+    let erro = document.createElement('p');
+    erro.classList.add("erro");
+    erro.innerText = msg;
+    errorCamp.insertBefore(erro, errorCamp.firstChild);
+}
+
 document.getElementById("formProduto_imoveis").addEventListener('submit', e =>{
     e.preventDefault();
+
+    if (!local.value || !terreno.value || !tamanho.value || !finalidade.value) {
+        notifyError('Preencha todos os campos', 'formProduto_imoveis');
+        return;
+    }
+
+    if (isNaN(terreno.value) || isNaN(tamanho.value)) {
+        notifyError('Os campos Terreno e Tamanho devem ser numérico', 'formProduto_imoveis');
+        return;
+    }
+
+    if (terreno.value <= 0 || tamanho.value <= 0) {
+        notifyError('Os campos Terreno e Tamanho devem ser maiores que zero', 'formProduto_imoveis');
+        return;
+    }
+
+    if (local.value.length < 8) {
+        notifyError('O CEP fornecido é inválido', 'formProduto_imoveis');
+        return;
+    }
 
     const imoveis = {
         local: local.value,
@@ -87,10 +117,28 @@ document.getElementById("formProduto_imoveis").addEventListener('submit', e =>{
     localStorage.setItem('dadosImoveis', JSON.stringify(dadosImoveis));
 
     window.location.href = "./index.html";
+
+    let msgErro = document.querySelector('.erro');
+    if(msgErro) login.removeChild(msgErro);
 });
 
 document.getElementById("formProduto_vendas").addEventListener('submit', e =>{
     e.preventDefault();
+
+    if (!cliente.value || !vendedor.value || !valor.value || !finalidadeSells.value) {
+        notifyError('Preencha todos os campos', 'formProduto_vendas');
+        return;
+    }
+
+    if (isNaN(valor.value)) {
+        notifyError('O campo Valor deve ser numérico', 'formProduto_vendas');
+        return;
+    }
+
+    if (valor.value <= 0) {
+        notifyError('O campo Valor deve ser maior que zero', 'formProduto_vendas');
+        return;
+    }
 
     const vendas = {
         cliente: cliente.value,
@@ -109,10 +157,28 @@ document.getElementById("formProduto_vendas").addEventListener('submit', e =>{
     localStorage.setItem('dadosVendas', JSON.stringify(dadosVendas));
 
     window.location.href = "./index.html";
+
+    let msgErro = document.querySelector('.erro');
+    if(msgErro) login.removeChild(msgErro);
 });
 
 document.getElementById("formProduto_funcionarios").addEventListener('submit', e =>{
     e.preventDefault();
+
+    if (!nameFunc.value || !sells.value || !salary.value || !functionFunc.value) {
+        notifyError('Preencha todos os campos', 'formProduto_funcionarios');
+        return;
+    }
+
+    if (isNaN(sells.value) || isNaN(salary.value)) {
+        notifyError('Os campos Vendas e Salário devem ser numérico', 'formProduto_funcionarios');
+        return;
+    }
+
+    if (sells.value <= 0 || salary.value <= 0) {
+        notifyError('Os campos Vendas e Salário devem ser maiores que zero', 'formProduto_funcionarios');
+        return;
+    }
 
     const funcionarios = {
         nameFunc: nameFunc.value,
@@ -131,6 +197,9 @@ document.getElementById("formProduto_funcionarios").addEventListener('submit', e
     localStorage.setItem('dadosFuncionarios', JSON.stringify(dadosFuncionarios));
 
     window.location.href = "./index.html";
+
+    let msgErro = document.querySelector('.erro');
+    if(msgErro) login.removeChild(msgErro);
 });
 
 // ------------------------------------------------------------------------------------------------------------
