@@ -68,9 +68,9 @@ if(chave){
 // -- Código de submissão do formulário
 // ------------------------------------------------------------------------------------------------------------
 function notifyError(msg, element) {
-    let msgErro = document.querySelector('.erro');
-    if(msgErro) login.removeChild(msgErro);
     const errorCamp = document.getElementById(element);
+    let msgErro = document.querySelector('.erro');
+    if(msgErro) errorCamp.removeChild(msgErro);
     let erro = document.createElement('p');
     erro.classList.add("erro");
     erro.innerText = msg;
@@ -95,7 +95,7 @@ document.getElementById("formProduto_imoveis").addEventListener('submit', e =>{
         return;
     }
 
-    if (local.value.length < 8) {
+    if (local.value.length != 8) {
         notifyError('O CEP fornecido é inválido', 'formProduto_imoveis');
         return;
     }
@@ -118,8 +118,9 @@ document.getElementById("formProduto_imoveis").addEventListener('submit', e =>{
 
     window.location.href = "./index.html";
 
+    const errorCamp = document.getElementById('formProduto_imoveis');
     let msgErro = document.querySelector('.erro');
-    if(msgErro) login.removeChild(msgErro);
+    if(msgErro) errorCamp.removeChild(msgErro);
 });
 
 document.getElementById("formProduto_vendas").addEventListener('submit', e =>{
@@ -158,8 +159,9 @@ document.getElementById("formProduto_vendas").addEventListener('submit', e =>{
 
     window.location.href = "./index.html";
 
+    const errorCamp = document.getElementById('formProduto_vendas');
     let msgErro = document.querySelector('.erro');
-    if(msgErro) login.removeChild(msgErro);
+    if(msgErro) errorCamp.removeChild(msgErro);
 });
 
 document.getElementById("formProduto_funcionarios").addEventListener('submit', e =>{
@@ -198,8 +200,9 @@ document.getElementById("formProduto_funcionarios").addEventListener('submit', e
 
     window.location.href = "./index.html";
 
+    const errorCamp = document.getElementById('formProduto_funcionarios');
     let msgErro = document.querySelector('.erro');
-    if(msgErro) login.removeChild(msgErro);
+    if(msgErro) errorCamp.removeChild(msgErro);
 });
 
 // ------------------------------------------------------------------------------------------------------------
