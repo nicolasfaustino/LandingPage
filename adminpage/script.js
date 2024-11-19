@@ -70,7 +70,7 @@ if(chave){
 function notifyError(msg, element) {
     const errorCamp = document.getElementById(element);
     let msgErro = document.querySelector('.erro');
-    if(msgErro) errorCamp.removeChild(msgErro);
+    if (msgErro) msgErro.remove();
     let erro = document.createElement('p');
     erro.classList.add("erro");
     erro.innerText = msg;
@@ -118,9 +118,8 @@ document.getElementById("formProduto_imoveis").addEventListener('submit', e =>{
 
     window.location.href = "./index.html";
 
-    const errorCamp = document.getElementById('formProduto_imoveis');
     let msgErro = document.querySelector('.erro');
-    if(msgErro) errorCamp.removeChild(msgErro);
+    if (msgErro) msgErro.remove();
 });
 
 document.getElementById("formProduto_vendas").addEventListener('submit', e =>{
@@ -159,9 +158,8 @@ document.getElementById("formProduto_vendas").addEventListener('submit', e =>{
 
     window.location.href = "./index.html";
 
-    const errorCamp = document.getElementById('formProduto_vendas');
     let msgErro = document.querySelector('.erro');
-    if(msgErro) errorCamp.removeChild(msgErro);
+    if (msgErro) msgErro.remove();
 });
 
 document.getElementById("formProduto_funcionarios").addEventListener('submit', e =>{
@@ -200,9 +198,8 @@ document.getElementById("formProduto_funcionarios").addEventListener('submit', e
 
     window.location.href = "./index.html";
 
-    const errorCamp = document.getElementById('formProduto_funcionarios');
     let msgErro = document.querySelector('.erro');
-    if(msgErro) errorCamp.removeChild(msgErro);
+    if (msgErro) msgErro.remove();
 });
 
 // ------------------------------------------------------------------------------------------------------------
